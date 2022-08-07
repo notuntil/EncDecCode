@@ -16,7 +16,9 @@ void* decode(Codec_ *codec)
 
 int main()
 {
-	Request req(3, "冠福股份", "飞碟", "系统韩国", "张斐然");
+	//Request req(3, "冠福股份", "飞碟", "系统韩国", "张斐然");
+	RequestInfo reqinfo = { 3, "冠福股份", "飞碟", "系统韩国", "张斐然" };
+	Request req(&reqinfo);
 	string enstr = encode(&req);
 	cout << "request 序列化: " << enstr << endl;
 	Request ans(enstr);
@@ -27,7 +29,9 @@ int main()
 		<< "sign " << reMsg->sign() << " "
 		<< "data " << reMsg->data() << endl;
 
-	Response res(1, 78, "飞碟内阁", "哦IE惹烦恼", "期末考V领房间空格");
+	//Response res(1, 78, "飞碟内阁", "哦IE惹烦恼", "期末考V领房间空格");
+	RespondInfo resinfo = { 1, 78, "飞碟内阁", "哦IE惹烦恼", "期末考V领房间空格" };
+	Response res(&resinfo);
 	string restr = encode(&res);
 	cout << "Respond序列化：" << restr << endl;
 	Response anp(restr);

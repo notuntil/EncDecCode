@@ -1,18 +1,30 @@
 #pragma once
 #include "Codec_.h"
 #include "RequestMsg.pb.h"
+
+struct RequestInfo
+{
+	int cmd;
+	string clientID;
+	string serverID;
+	string sign;
+	string data;
+};
+
 class Request :
 	public Codec_
 {
 public:
 	Request();
 	Request(string encstr);//构建的对象 用于解码 的场景
-	Request(int cmd, string clientID, string serverID, string sign, string data);//编码 场景
+	//Request(int cmd, string clientID, string serverID, string sign, string data);//编码 场景
+	Request(RequestInfo *info);
 	
 	~Request();
 
 	void initMessage(string encstr);//解码使用
-	void initMessage(int cmd, string clientID, string serverID, string sign, string data);//编码
+	//void initMessage(int cmd, string clientID, string serverID, string sign, string data);//编码
+	void initMessage(RequestInfo *info);
 
 	string encodeMsg();//编码-->序列化函数，返回序列化的字符串
 	void* decodeMsg();//解码-->反序列化函数，返回结构体
