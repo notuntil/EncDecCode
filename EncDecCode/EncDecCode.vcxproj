@@ -123,16 +123,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="CodecFactory.h" />
     <ClInclude Include="Codec_.h" />
     <ClInclude Include="Request.h" />
+    <ClInclude Include="RequestFactory.h" />
     <ClInclude Include="RequestMsg.pb.h" />
+    <ClInclude Include="RespondFactory.h" />
     <ClInclude Include="RespondMsg.pb.h" />
     <ClInclude Include="Response.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CodecFactory.cpp" />
     <ClCompile Include="Codec_.cpp" />
     <ClCompile Include="Request.cpp" />
+    <ClCompile Include="RequestFactory.cpp" />
     <ClCompile Include="RequestMsg.pb.cc" />
+    <ClCompile Include="RespondFactory.cpp" />
     <ClCompile Include="RespondMsg.pb.cc" />
     <ClCompile Include="Response.cpp" />
     <ClCompile Include="test.cpp" />
