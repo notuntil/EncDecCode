@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+message RespondMsg
+{
+	bool rv = 1;
+	int32 seckeyid = 2;
+	bytes clientId = 3;
+	bytes serverId = 4;
+	bytes data = 5;
+}
