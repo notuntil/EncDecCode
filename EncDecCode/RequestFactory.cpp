@@ -1,13 +1,13 @@
 #include "RequestFactory.h"
 
 
-RequestFactory::RequestFactory(string enc):m_encStr(enc)//ÊäÈë²ÎÊıÎª×Ö·û´®Ê±£¬ m_flagÉèÎª0
+RequestFactory::RequestFactory(string enc):m_encStr(enc)//è¾“å…¥å‚æ•°ä¸ºå­—ç¬¦ä¸²æ—¶ï¼Œ m_flagè®¾ä¸º0
 {
 	m_flag = 0;
 	m_info = nullptr;
 }
 
-RequestFactory::RequestFactory(RequestInfo * info):m_info(info)//ÊäÈë²ÎÊıÎª½á¹¹ÌåÖ¸ÕëÊ±£¬m_flagÉèÎª1
+RequestFactory::RequestFactory(RequestInfo * info):m_info(info)//è¾“å…¥å‚æ•°ä¸ºç»“æ„ä½“æŒ‡é’ˆæ—¶ï¼Œm_flagè®¾ä¸º1
 {
 	m_flag = 1;
 	m_encStr = "";
@@ -21,8 +21,8 @@ Codec_ * RequestFactory::createCodec()
 {
 	Codec_ *c = nullptr;
 	if (m_flag == 0)
-		c = new Request(m_encStr);//µ÷ÓÃ ĞòÁĞ»¯×Ö·û´®´´½¨¶ÔÏó
+		c = new Request(m_encStr);//è°ƒç”¨ åºåˆ—åŒ–å­—ç¬¦ä¸²åˆ›å»ºå¯¹è±¡
 	else
-		c = new Request(m_info);//µ÷ÓÃ ½á¹¹ÌåÖ¸Õë´´½¨¶ÔÏó
+		c = new Request(m_info);//è°ƒç”¨ ç»“æ„ä½“æŒ‡é’ˆåˆ›å»ºå¯¹è±¡
 	return c;
 }

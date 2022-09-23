@@ -1,13 +1,13 @@
 #include "RespondFactory.h"
 #include <iostream>
 
-RespondFactory::RespondFactory(string enc):m_encStr(enc) //输入参数为字符串时， m_flag设为0
+RespondFactory::RespondFactory(string enc):m_encStr(enc) //杈撳叆鍙傛暟涓哄瓧绗︿覆鏃讹紝 m_flag璁句负0
 {
 	m_flag = 0;
 	m_info = nullptr;
 }
 
-RespondFactory::RespondFactory(RespondInfo * info):m_info(info) //输入参数为结构体指针时，m_flag设为1
+RespondFactory::RespondFactory(RespondInfo * info):m_info(info) //杈撳叆鍙傛暟涓虹粨鏋勪綋鎸囬拡鏃讹紝m_flag璁句负1
 {
 	m_flag = 1;
 	m_encStr = "";

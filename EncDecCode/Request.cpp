@@ -8,7 +8,7 @@ Request::Request()
 
 Request::Request(string encstr):m_encStr(encstr)
 {
-	//m_msg.ParseFromString(encstr);//·´ĞòÁĞ»¯
+	//m_msg.ParseFromString(encstr);//ååºåˆ—åŒ–
 	initMessage(encstr);
 }
 

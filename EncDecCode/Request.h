@@ -16,21 +16,21 @@ class Request :
 {
 public:
 	Request();
-	Request(string encstr);//¹¹½¨µÄ¶ÔÏó ÓÃÓÚ½âÂë µÄ³¡¾°
-	//Request(int cmd, string clientID, string serverID, string sign, string data);//±àÂë ³¡¾°
+	Request(string encstr);//æ„å»ºçš„å¯¹è±¡ ç”¨äºè§£ç  çš„åœºæ™¯
+	//Request(int cmd, string clientID, string serverID, string sign, string data);//ç¼–ç  åœºæ™¯
 	Request(RequestInfo *info);
 	
 	~Request();
 
-	void initMessage(string encstr);//½âÂëÊ¹ÓÃ
-	//void initMessage(int cmd, string clientID, string serverID, string sign, string data);//±àÂë
+	void initMessage(string encstr);//è§£ç ä½¿ç”¨
+	//void initMessage(int cmd, string clientID, string serverID, string sign, string data);//ç¼–ç 
 	void initMessage(RequestInfo *info);
 
-	string encodeMsg();//±àÂë-->ĞòÁĞ»¯º¯Êı£¬·µ»ØĞòÁĞ»¯µÄ×Ö·û´®
-	void* decodeMsg();//½âÂë-->·´ĞòÁĞ»¯º¯Êı£¬·µ»Ø½á¹¹Ìå
+	string encodeMsg();//ç¼–ç -->åºåˆ—åŒ–å‡½æ•°ï¼Œè¿”å›åºåˆ—åŒ–çš„å­—ç¬¦ä¸²
+	void* decodeMsg();//è§£ç -->ååºåˆ—åŒ–å‡½æ•°ï¼Œè¿”å›ç»“æ„ä½“
 
 private:
-	string m_encStr;//ĞòÁĞ»¯×Ö·û´®
-	RequestMsg m_msg;//ĞòÁĞ»¯RequestµÄ¶ÔÏó
+	string m_encStr;//åºåˆ—åŒ–å­—ç¬¦ä¸²
+	RequestMsg m_msg;//åºåˆ—åŒ–Requestçš„å¯¹è±¡
 };
 
